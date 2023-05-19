@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    	<title>Friends Registration</title>
+
+	<style>
+      
+		body {
+        
+			display: flex;
+			flex-direction: column;
+      		justify-content: center;
+        		align-items: center;
+        		height: 100vh;
+			background-color: #E8C7C8;
+      
+		}
+
+      	form {
+        
+			
+			border: 1px solid black;
+        		padding: 20px;
+			background-color: #5d7788;
+      
+		}
+
+    	</style>
+
+</head>
+ 
+<body>
+
+	<h1>Friends Registration</h1>
+
+    	<form action="submit-form.php" method="post">
+      
+		<label for="name">Name:</label><br>
+      	<input type="text" id="name" name="name"><br>
+      	<label for="email">Email:</label><br>
+      	<input type="email" id="email" name="email"><br>
+      	<label for="phone">Phone:</label><br>
+      	<input type="tel" id="phone" name="phone"><br>
+      	<label for="birthday">Birthday:</label><br>
+      	<input type="date" id="birthday" name="birthday"><br><br>
+      	<input type="submit" value="Submit">
+    	
+	</form> 
+
+	<p> "A simple form to keep track on all future friends or forever associates" </p>
+
+ </body>
+</html>
