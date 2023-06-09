@@ -34,7 +34,7 @@
 
 	<h1>Friends Registration</h1>
 
-    	<form action="https://script.google.com/macros/s/AKfycbzqC7bFi1NGjB2DxdioePuQdpMKdCxMwhu1dsghY5S-03WYjf_V9SWv-iPpB39N64aB-g/exec" method="post">
+    	<form>
       
 		<label for="name">Name:</label><br>
       	<input type="text" id="name" name="name"><br>
@@ -59,6 +59,30 @@
 	  </div>
 
 	  <h1 id="msg"></h1>
+	
+	<script>
+            let form = document.querySelector("form");
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                document.querySelector("#sub").value = "Submitting..";
+                let data = new FormData(form);
+                fetch('https://script.google.com/macros/s/AKfycbwGqh8HCOImqQQqNYiju2B_RNQy_71M9mHT3-YRgFsJq6Tj2dx8h3WlvoylgYctkG2n/exec', {
+                        method: 'POST',
+                        body: data
+                    })
+                    .then(res => res.text())
+                    .then(data => {
+                        document.querySelector("#msg").innerHTML = data;
+                        document.querySelector("#sub").value = "Submit";
+                        // Hide the success message after 3 seconds
+                        setTimeout(() => {
+                            document.querySelector("#msg").innerHTML = "";
+                        }, 3000);
+                        // Reset the form fields
+                        form.reset();
+                    });
+            })
+        </script>
 
 	 
  </body>
